@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ blog_title }}</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ blog_title }}</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ path('home') }}">Home</a></li>
+                <li><a href="{{ path('blog') }}">Blog</a></li>
+                <li><a href="{{ path('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>{{ post_title }}</h2>
+        <p>{{ post_content }}</p>
+    </main>
+    <footer>
+        <p>&copy; {{ "now"|date("Y") }} My Blog</p>
+    </footer>
+</body>
+</html>
+
+
