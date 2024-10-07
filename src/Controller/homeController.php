@@ -20,19 +20,18 @@ class HomeController extends AbstractController
     public function index(EntityManagerInterface $em): Response
     {
 
-        return $this->render('home/index.html.twig', [
+        return $this->render('blog/index.html.twig', [
             'title' => 'Homepage',
             'sections' => $em->getRepository(Section::class)->findAll()
         ]);
     }
-
 
     #[Route('/section/{id}', name: 'section')]
     public function section(int $id, SectionRepository $sections): Response
     {
         # Sélection de la section quand son id vaut celui de la page
         $section = $sections->findOneBy(['id' => $id]);
-        return $this->render('coucou/section.html.twig', [
+        return $this->render('/section.html.twig', [
             # titre
             'title' => $section->getSectionTitle(),
             # section seule via son id
