@@ -9,10 +9,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Routing\Annotation\Route;
 
-// (C)afé, (R)écupération après avoir cassé le code, (U)ltrarapide prise de panique, (D)ebug toute la nuit !
-// (C)'est (R)elou, (U)nique dans sa capacité à (D)éclencher des bugs incompréhensibles. 😑
 #[Route('/admin/section')]
 final class AdminSectionController extends AbstractController
 {
@@ -70,14 +68,14 @@ final class AdminSectionController extends AbstractController
         return $this->render('admin_section/edit.html.twig', [
             'section' => $section,
             'form' => $form,
-            'title' => 'Modifier '.$section->getSectionTitle(),
+            'title' => 'Modifier ' . $section->getSectionTitle(),
         ]);
     }
 
     #[Route('/{id}', name: 'app_admin_section_delete', methods: ['POST'])]
     public function delete(Request $request, Section $section, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$section->getId(), $request->getPayload()->getString('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $section->getId(), $request->request->get('_token'))) {
             $entityManager->remove($section);
             $entityManager->flush();
         }
