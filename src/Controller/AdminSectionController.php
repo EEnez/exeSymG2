@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Section;
-use App\Form\SectionType;
+use App\Form\SectionType; // Ensure this import is correct and the class exists
 use App\Repository\SectionRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,7 +19,7 @@ final class AdminSectionController extends AbstractController
     {
         return $this->render('admin_section/index.html.twig', [
             'sections' => $sectionRepository->findAll(),
-            'title' => 'Liste des sections',
+            'title' => 'Liste des sections', // spell-checker: disable-line
         ]);
     }
 
@@ -39,7 +39,7 @@ final class AdminSectionController extends AbstractController
 
         return $this->render('admin_section/new.html.twig', [
             'section' => $section,
-            'form' => $form,
+            'form' => $form->createView(),
             'title' => 'Nouvelle section',
         ]);
     }
@@ -67,7 +67,7 @@ final class AdminSectionController extends AbstractController
 
         return $this->render('admin_section/edit.html.twig', [
             'section' => $section,
-            'form' => $form,
+            'form' => $form->createView(),
             'title' => 'Modifier ' . $section->getSectionTitle(),
         ]);
     }
