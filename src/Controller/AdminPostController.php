@@ -21,7 +21,7 @@ final class AdminPostController extends AbstractController
     #[Route(name: 'app_admin_post_index', methods: ['GET'])]
     public function index(PostRepository $postRepository): Response
     {
-        return $this->render('admin_post/index.html.twig', [
+        return $this->render('post/index.html.twig', [
             'posts' => $postRepository->findAll(),
             'title' => 'Liste des posts',
         ]);
@@ -39,7 +39,7 @@ final class AdminPostController extends AbstractController
             return $this->redirectToRoute('app_admin_post_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('admin_post/new.html.twig', [
+        return $this->render('post/new.html.twig', [
             'post' => $post,
             'form' => $form,
             'title' => 'Nouveau post',
@@ -49,7 +49,7 @@ final class AdminPostController extends AbstractController
     #[Route('/{id}', name: 'app_admin_post_show', methods: ['GET'])]
     public function show(Post $post): Response
     {
-        return $this->render('admin_post/show.html.twig', [
+        return $this->render('post/show.html.twig', [
             'post' => $post,
             'title' => $post->getPostTitle(),
         ]);
@@ -65,7 +65,7 @@ final class AdminPostController extends AbstractController
             return $this->redirectToRoute('app_admin_post_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('admin_post/edit.html.twig', [
+        return $this->render('post/edit.html.twig', [
             'post' => $post,
             'form' => $form,
             'title' => 'Modifier '.$post->getPostTitle(),

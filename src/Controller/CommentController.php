@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/comment')]
+#[Route('admin/comment')]
 final class CommentController extends AbstractController
 {
     public function __construct()
