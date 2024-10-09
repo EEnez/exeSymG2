@@ -8,13 +8,7 @@
       <a href="{{ path('home') }}" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="{{ asset('img/logo.png') }}" alt=""> -->
-        <h1 class="sitename">Blog</h1>
-      </a>
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-      <a href="{{ path('home') }}" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="{{ asset('img/logo.png') }}" alt=""> -->
-        <h1 class="sitename">Blog</h1>
+        <h1 data-aos="fade-up">Bienvenue sur le blog</h1>
       </a>
     </div>
   </header>
@@ -23,12 +17,15 @@
 
   <main id="main">
     <!-- Hero Section -->
-    <section id="hero" class="hero section">
-      <img src="{{ asset('img/hero-bg.jpg') }}" alt="" data-aos="fade-in">
-      <div class="container text-center" data-aos="zoom-out" data-aos-delay="100">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <h2>Enez</h2>
+    <section id="hero" class="hero d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 d-flex flex-column justify-content-center">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{{ asset('img/hero-img.png') }}" class="img-fluid" alt="">
           </div>
         </div>
       </div>
@@ -40,18 +37,13 @@
     <div class="container">
       <div class="copyright text-center">
         <p>© <span>Copyright</span> <strong class="px-1 sitename">Enez</strong> <span>All Rights Reserved<br></span></p>
-      </div>
-      <div class="social-links d-flex justify-content-center">
-        <a href="#"><i class="bi bi-twitter"></i></a>
-        <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-instagram"></i></a>
-        <a href="#"><i class="bi bi-linkedin"></i></a>
-      </div>
     </div>
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
